@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sistema de Gestão Escolar — Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <form class="card" id="loginForm" autocomplete="off" novalidate>
+        <div class="card-header">
+          <h1>Sistema de Gestão Escolar</h1>
+        </div>
+
+        <div class="card-body">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="admin@escola.com" />
+          <small class="demo">Demo: admin@escola.com ou secretaria@escola.com</small>
+
+          <label for="password">Senha</label>
+          <input id="password" name="password" type="password" placeholder="Senha" />
+          <small class="demo">Demo: 123456</small>
+
+          <button type="submit" class="btn">Entrar</button>
+          <div id="message" class="message" aria-live="polite"></div>
+        </div>
+      </form>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
