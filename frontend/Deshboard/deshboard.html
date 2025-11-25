@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard Administrativo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylr.css" />
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <h2>Escola +</h2>
+          <div class="role">Administrador</div>
+        </div>
+        <nav class="nav">
+          <a class="nav-item active" href="#"><span class="icon">📊</span>Dashboard</a>
+          <a class="nav-item" href="#"><span class="icon">👥</span>Alunos</a>
+          <a class="nav-item" href="#"><span class="icon">📚</span>Cursos e Turmas</a>
+          <a class="nav-item" href="#"><span class="icon">📝</span>Matrículas</a>
+          <a class="nav-item" href="#"><span class="icon">🧾</span>Notas</a>
+          <a class="nav-item" href="#"><span class="icon">🎧</span>Atendimento</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="header">
+          <h1>Dashboard Administrativo</h1>
+        </header>
+
+        <section class="stats-row">
+          <div class="stat-card light-blue">
+            <div class="stat-inner">
+              <div>
+                <div class="stat-label">Total de Alunos</div>
+                <div class="stat-number">128</div>
+              </div>
+              <div class="stat-icon">👥</div>
+            </div>
+          </div>
+
+          <div class="stat-card light-purple">
+            <div class="stat-inner">
+              <div>
+                <div class="stat-label">Turmas Ativas</div>
+                <div class="stat-number">12</div>
+              </div>
+              <div class="stat-icon">📖</div>
+            </div>
+          </div>
+
+          <div class="stat-card light-green">
+            <div class="stat-inner">
+              <div>
+                <div class="stat-label">Taxa de Aprovação</div>
+                <div class="stat-number">85%</div>
+              </div>
+              <div class="stat-icon">🧾</div>
+            </div>
+          </div>
+
+          <div class="stat-card light-orange">
+            <div class="stat-inner">
+              <div>
+                <div class="stat-label">Solicitações Pendentes</div>
+                <div class="stat-number">7</div>
+              </div>
+              <div class="stat-icon">🎧</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="charts-row">
+          <div class="panel">
+            <div class="panel-header">Matrículas por Mês</div>
+            <div class="panel-body">
+              <canvas id="barChart"></canvas>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">Distribuição por Turma</div>
+            <div class="panel-body center">
+              <canvas id="pieChart" width="300" height="300"></canvas>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

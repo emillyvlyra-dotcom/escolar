@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (allowed.includes(e) && p === '123456') {
       message.textContent = 'Login realizado com sucesso (demo). Redirecionando...';
       message.style.color = 'var(--accent-dark)';
-      // simple redirect after a short delay (demo-only)
+      // redirect to dashboard after a short delay (demo-only)
       setTimeout(() => {
-        message.textContent = 'Bem-vindo ao sistema! (Página de destino de demonstração)';
+        window.location.href = './Deshboard/deshboard.html';
       }, 900);
       return;
     }
