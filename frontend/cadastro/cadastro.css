@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #5d5dff; /* Roxo principal para botões e header */
+    --secondary-color: #4b4bff; /* Tonalidade mais escura para hover */
+    --background-color: #f0f4f8; /* Fundo claro sutilmente azulado */
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --input-border-color: #ccc;
+    --error-color: #e74c3c;
+}
+
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0e7ff, #f0f4f8); /* Gradiente suave de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal para centralizar */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Estilo do Card (o bloco branco) */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden; /* Para conter o header com o border-radius */
+}
+
+/* Header Roxo */
+.card-header {
+    background: linear-gradient(90deg, #6a5acd, #5d5dff); /* Gradiente roxo */
+    color: white;
+    padding: 20px 30px;
+}
+
+.card-header h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Estilização do Formulário */
+form {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+/* Estilo da pequena dica (Mínimo 6 caracteres) */
+small {
+    display: block;
+    font-size: 0.75rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Botão de Cadastro */
+.btn-cadastro {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px; /* Espaço após o último campo */
+}
+
+.btn-cadastro:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-cadastro:active {
+    transform: scale(0.99);
+}
+
+/* Link "Voltar ao Login" */
+.login-link {
+    text-align: center;
+    padding: 0 30px 30px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.login-link a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Mensagem de Erro */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    height: 1.2em; /* Garante que o layout não 'pule' quando a mensagem aparece */
+}

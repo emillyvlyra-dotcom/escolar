@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
       message.style.color = 'var(--accent-dark)';
       // redirect to dashboard after a short delay (demo-only)
       setTimeout(() => {
-        window.location.href = './Deshboard/deshboard.html';
+        // adjust redirect path relative to this file location
+        window.location.href = '../Deshboard/deshboard.html';
       }, 900);
       return;
     }
@@ -32,4 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     message.textContent = 'Usuário ou senha incorretos.';
     message.style.color = '#e33';
   });
+});
+
+// Show/hide password toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const showChk = document.getElementById('showPass');
+  const pwd = document.getElementById('password');
+  if (showChk && pwd) {
+    showChk.addEventListener('change', () => {
+      pwd.type = showChk.checked ? 'text' : 'password';
+    });
+  }
 });
