@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notas e Histórico Escolar</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="notas.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <h2>Escola +</h2>
+          <div class="role">Administrador</div>
+        </div>
+        <nav class="nav">
+          <a class="nav-item" href="../Deshboard/deshboard.html"><span class="icon">📊</span>Dashboard</a>
+          <a class="nav-item" href="../aluno deshboard/aluno.html"><span class="icon">👥</span>Alunos</a>
+          <a class="nav-item" href="../cursos e turmas/cursosturmas.html"><span class="icon">📚</span>Cursos e Turmas</a>
+          <a class="nav-item" href="../matricula/matricula.html"><span class="icon">📝</span>Matrículas</a>
+          <a class="nav-item active" href="#"><span class="icon">🧾</span>Notas</a>
+          <a class="nav-item" href="#"><span class="icon">🎧</span>Atendimento</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="header">
+          <h1>Notas e Histórico Escolar</h1>
+          <button id="newNoteBtn" class="new-btn">+ Lançar Nota</button>
+        </header>
+
+        <div class="panel">
+          <table class="grades-table" id="gradesTable">
+            <thead>
+              <tr>
+                <th>Aluno</th>
+                <th>Disciplina</th>
+                <th>Nota</th>
+                <th>Presença</th>
+                <th>Período</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-id="1">
+                <td>João Silva</td>
+                <td>Matemática</td>
+                <td><strong>8.5</strong></td>
+                <td>95%</td>
+                <td>1º Bimestre</td>
+                <td><span class="status aprov">Aprovado</span></td>
+                <td class="actions">
+                  <button class="btn-icon edit" title="Editar">✏️</button>
+                  <button class="btn-icon delete" title="Excluir">🗑️</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal form for note -->
+    <div id="modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="modalTitle">Lançar Nota</h3>
+          <button id="modalClose" class="modal-close">✖️</button>
+        </div>
+        <form id="noteForm" class="modal-form">
+          <div class="form-row">
+            <label for="aluno">Aluno</label>
+            <select id="aluno" name="aluno">
+              <option value="1">João Silva</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="disciplina">Disciplina</label>
+            <input id="disciplina" name="disciplina" required />
+          </div>
+          <div class="form-row">
+            <label for="nota">Nota</label>
+            <input id="nota" name="nota" type="number" step="0.1" min="0" max="10" required />
+          </div>
+          <div class="form-row">
+            <label for="presenca">Presença (%)</label>
+            <input id="presenca" name="presenca" type="number" min="0" max="100" />
+          </div>
+          <div class="form-row">
+            <label for="periodo">Período</label>
+            <select id="periodo" name="periodo">
+              <option>1º Bimestre</option>
+              <option>2º Bimestre</option>
+              <option>3º Bimestre</option>
+              <option>4º Bimestre</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option value="aprov">Aprovado</option>
+              <option value="reprov">Reprovado</option>
+              <option value="recuperacao">Recuperação</option>
+            </select>
+          </div>
+          <div class="modal-actions">
+            <button type="button" id="cancelBtn" class="btn-light">Cancelar</button>
+            <button type="submit" class="btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="notas.js"></script>
+  </body>
+</html>
