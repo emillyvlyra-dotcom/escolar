@@ -1,4 +1,5 @@
 // index.js
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
@@ -12,10 +13,10 @@ app.use(cors());
 
 // --- 🔑 CONFIGURAÇÃO DO BANCO DE DADOS ---
 const dbConfig = {
-    host: 'localhost',
-    user: 'root', // Seu usuário MySQL (Exemplo: root)
-    password: '', // Sua senha MySQL (Substitua!)
-    database: 'sistema_escolar' // Nome do banco de dados onde as tabelas foram criadas
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 };
 
 let connection;

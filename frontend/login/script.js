@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Redirecionamento para o Dashboard
                 setTimeout(() => {
                     // Ajuste o caminho relativo conforme a localização do seu arquivo
-                    window.location.href = '../Deshboard/deshboard.html';
+                    window.location.href = '../Dashboard/dashboard.html';
                 }, 900);
 
             } else {
